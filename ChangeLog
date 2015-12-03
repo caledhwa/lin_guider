@@ -1,0 +1,119 @@
+2015-11-25 Lin_guider 3.2.1 (c)Galaxy Master <galaxy_master@mail.ru>
+
+	* Use latest Atik SDK (0.41), by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Use latest ASI SDK (0.2.1026), by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Fix gain control overflow in ASI driver, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Add save_frame in lg_tool.pl, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+
+2015-11-03 Lin_guider 3.2.0 (c)Galaxy Master <galaxy_master@mail.ru>
+
+	* Fixed DEC swapping in GPIO driver
+	* Guider window UI tweaks
+	* Add adjust window to fit image button
+	* Add support for all Bayer patterns, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Always use '.' in floating point numbers, regardless of the locale, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Add normalization of gain coefficients, if enabled changing the guide rate will affect
+	  directly the guiding, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Restore reticle angle after restart, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Use latest Atik SDK (0.34), by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Use latest ASI SDK (0.1.0803), by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Add colour support for ASI cameras, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Add 16-bit support for ASI cameras, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Fix seeveral issues in ASI driver, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Small fix in Starlight Xpress driver, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+
+2015-04-12 Lin_guider 3.1.0 (c)Galaxy Master <galaxy_master@mail.ru>
+
+	* Make reticle and square dragging responsive (independent of the exposure time)
+	* Reticle can be moved if the square is over it, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Last used square is now saved in configuration, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Make ASI buffer cleaning optional for better performance, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Add new dithering commands GET_DISTANCE and DITHER_NO_WAIT_XY, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Accept commands over TCP or Unix Sockets(default), by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Make Atik and SX drivers prefer the first camera with ST4 port, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Fixes in Atik, ASI and QHY5 drivers, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Created lg_tool.pl to be used as a dithering agent or as standalone application, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+
+2015-02-26 Lin_guider 3.0.0 (c)Galaxy Master <galaxy_master@mail.ru>
+
+	* Added support for ZWO ASI cameras, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Added full support for Starlight Express cameras, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Added binning in Atik video module, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Updated Atik driver to atikccdsdk-0.24, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Fixed Atik module to work with all Atik cameras to date (except AtikGP), by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Reorder lists of video and io devices and make names more descriptive, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* All dialogs are resizable now
+	* Added sensor info
+	* Added Optical black pixel callibration for QHY6, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Remove Optical black regions from the QHY6 frame, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Add QHY6 2x2 binning, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Created new icon set and some text changes, by Rumen G.Bogdanovski <rumen@skyarchive.org>
+	* Added calculation of HFD (Half Flux Diameter)
+
+2015-01-15 Lin_guider 2.11.2 (c)Galaxy Master  <galaxy_master@mail.ru>
+
+	* Minor changes of ATIK video module
+	* Minor changes of QHY5-II video module (additional controls)
+	* Bugfixes
+
+2014-11-25 Lin_guider 2.11.1 (c)Galaxy Master  <galaxy_master@mail.ru>
+
+	* Minor changes of ATIK video module
+
+2014-08-05 Lin_guider 2.11.0 (c)Galaxy Master  <galaxy_master@mail.ru>
+
+	* Added support of ATIK cameras (video and pulse drivers)
+	* Misc. improvements and bugfixes
+
+2014-04-05 Lin_guider 2.10.0 (c)Galaxy Master  <galaxy_master@mail.ru>
+
+	* Added Nexstar IO driver
+	* Added support of QHY5L-II-C with color balance
+	* Improved stability of QHY5(L)-II-(C,M) driver
+	* Multiple video-subsystem improvements
+	* Improved direction control of guider
+	* Misc. improvements and bugfixes
+
+2013-10-10 Lin_guider 2.9.0 (c)Galaxy Master  <galaxy_master@mail.ru>
+
+	* Added GPUSB IO driver
+	* Added GPIO IO driver for Raspberry Pi and similar boards with GPIO
+	* Server has been refactored and supports long time commands now
+	* Added new feature - DITHERING. Now it's possible to make dithering using CCD 
+	(http://http://sourceforge.net/projects/cccd/) or your own client. (See remote_client.c for example)
+	* Added experimental support of QHY5L-II-M (video and pulse drivers)
+	* Added experimental support of QHY5-II (video and pulse drivers)
+
+2012-09-09 Lin_guider 2.8.0 (c)Galaxy Master  <galaxy_master@mail.ru>
+
+	* Added image quality estimation
+	* Added quality based guiding control with two thresholds 
+	* Added guiding stability estimation
+	* Added autofind star ability
+	* Improved algorithm of double-axis calibration method
+	* Added automatic adjustment of the directions for DEC corrections in double-axis calibration
+	* Fixed possible out-of-matrix movements during calibration
+	* Added possibility of manual swapping of the directions for DEC corrections during guiding
+	* Improved video device selector
+	* Added sky simulator for NULL-camera with stars, turbulence, etc.
+	* Added network UDP notifications for several important events (i.e. picture quality, stability, etc.)
+	* Added demo PERL-script for receiving and printing all network notifications
+	* Added new 'Settings' dialog
+	* Added base remote control by persistent connection in UNIX domain
+	* Added set of commands for remote control. (version, positioning of guider suare, save video frame)
+	* Added C demo client for remote control
+	* Bugfixes
+
+2011-09-25 Lin_giuder 2.7.0 (c)Galaxy Master  <galaxy_master@mail.ru>
+
+	* Reticle calibration by two axes RA and DEC
+	* Video calibration by "Dark" frame
+	* Mathimatical frame buffer of 'double' precision
+	* Added new threshold algorithm
+	* Added scrollbars for video window
+	* Added calculation of root mean square deviation for DEC
+	* Great bugfix of guider function for QHY5 and QHY6.(removed useless waiting on mutex)
+	* Added 'Installer/Uninstaller'
+	* Added manual for Lin_guider. (now in Russian. English text will coming soon)
+	* And some other minor changes...
+	* Added time labels for logger
