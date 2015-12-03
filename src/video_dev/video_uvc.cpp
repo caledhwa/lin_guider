@@ -133,7 +133,7 @@ int cvideo_uvc::init_device( void )
  	memset( &cropcap, 0, sizeof(struct v4l2_cropcap) );
  	memset( &crop, 0, sizeof(struct v4l2_crop) );
 
-	capture_params.pixel_format = V4L2_PIX_FMT_YUYV;
+	capture_params.pixel_format = V4L2_PIX_FMT_MJPEG;
 
  	// aquire capabilities
  	if( xioctl(fd, VIDIOC_QUERYCAP, &cap) == -1 )
@@ -180,7 +180,7 @@ int cvideo_uvc::init_device( void )
 	// is available. If not, we try to fall back to YUYV.
 	int requested_format_found = 0, fallback_format = -1;
 
-	capture_params.pixel_format = V4L2_PIX_FMT_YUYV;
+	capture_params.pixel_format = V4L2_PIX_FMT_MJPEG;
 
 	for( i = 0; i < MAX_FMT && device_formats[i].format;i++ )
 	{
@@ -218,12 +218,12 @@ int cvideo_uvc::init_device( void )
 		return EXIT_FAILURE;
 	}
 
-	param_val_t val;
-	val.set( V4L2_EXPOSURE_AUTO );
-	if( set_control( V4L2_CID_EXPOSURE_AUTO, val ) == -1 )
-	{
-		log_e("Unable to set exposure into autoexposure mode");
-	}
+	//param_val_t val;
+	//val.set( V4L2_EXPOSURE_AUTO );
+	//if( set_control( V4L2_CID_EXPOSURE_AUTO, val ) == -1 )
+	//{
+	//	log_e("Unable to set exposure into autoexposure mode");
+	//}
 
 
 
@@ -473,9 +473,10 @@ int cvideo_uvc::init_mmap( void )
 				      					PROT_READ | PROT_WRITE, // required
 				      					MAP_SHARED,	// recommended
 				      					fd, buf.m.offset);
-
+		log_i("Checking mmap buffers...");
  		if( buffers[n_buffers].start.ptr == MAP_FAILED )
  		{
+			log_i("Ennumerating buffers... %s",n_buffers);
  			 for( i = 0; i < n_buffers; ++i)
  			 {
  				  if( munmap( buffers[i].start.ptr, buffers[i].length ) == -1 )
